@@ -55,7 +55,31 @@ const getDataAboutParams = (firtsCurrecy, secondCurrency, arr) => {
             break;
         }
     }
-
-    return res;
+    return res[firtsCurrecy]/ res[secondCurrency];
 }
 
+const loadDiagram = async () => {
+    let data1 = [];
+    let selectFrom = document.querySelector('#first');
+    let selectTo = document.querySelector('#second');
+    for (let i = 10; i <= 22; i++) {
+        let response = await fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=20${i}0302&json`);
+        let data = await response.json();
+        let result = getDataAboutParams(selectFrom.value.split(' ')[0], selectTo.value.split(' ')[0], data);
+        const temp = [result, data[0].exchangedate.split('.')[2]];
+        data1.push(temp.reverse());
+    }
+    console.log(data1);
+    chart = anychart.line();
+
+    // create a line series and set the data
+    const series = chart.line(data1);
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+
+};
