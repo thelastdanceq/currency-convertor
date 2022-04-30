@@ -1,0 +1,53 @@
+body {
+    font-family: Courier, monospace;
+}
+
+#changer {
+    margin: 0px;
+}
+
+#convertor {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+}
+
+#from {
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#to {
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#first,
+#second,
+#fromInput {
+    border: none;
+    font-family: Courier, monospace;
+    font-size: 25px;
+    outline: none;
+}
+
+#middle p {
+    margin: 0px;
+    font-size: 100px;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#container{
+    width: 50%;
+    height: 700px;
+    margin: auto;
+    margin-top: 200px;  
+}

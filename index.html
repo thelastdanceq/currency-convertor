@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,29 @@
 </head>
 
 <body>
-    <script src=".js"></script>
+    <section id='convertor'>
+        <div id="from">
+            <label for="first">FROM</label>
+            <select name="first" id="first"></select>
+            <input type="number" id='fromInput' value=1>
+        </div>
+        <div id="middle">
+            <p>=</p>
+        </div>
+        <div id="to">
+            <label for="second" id='label'>TO</label>
+            <select name="second" id="second"></select>
+            <span id='changer'></span>
+        </div>
+    </section>
+    </section>
+    <section id="container">
+
+    </section>
+    <script src="src/functions.js"></script>
+    <script src="src/index.js"></script>
+    <script src='src/diagram.js'></script>
+
 </body>
+
 </html>
